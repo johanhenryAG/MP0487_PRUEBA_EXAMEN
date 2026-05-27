@@ -155,7 +155,7 @@ $eventos = $eventController->index();
                 if (!empty($eventos)) {
                     $count = 0;
                     foreach ($eventos as $evento) {
-                        if ($count >= 8) break; // Limit to 4 events for "Lo más buscado"
+                        if ($count >= 4) break; // Limit to 4 events for "Lo más buscado"
                         ?>
                         <a class="evento-card" href="#">
                             <div class="evento-card__img" style="background-image: url('../IMG/<?php echo htmlspecialchars($evento['image_name']); ?>'); background-size: cover; background-position: center;"></div>
@@ -195,7 +195,7 @@ $eventos = $eventController->index();
             <div class="eventos-disponibles__grid">
                 <?php
                 // Display free events from the database
-                $freeEvents = $eventController->index();
+                $freeEvents = $eventController->indexfree();
 
                 if (!empty($freeEvents)) {
                     $count = 0;
